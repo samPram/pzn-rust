@@ -51,3 +51,88 @@ tipe data number integer yang panjangnya mengikuti platform sistem operasi misal
 
 ## Default Number
 ketika membuat variable secara implicit(tidak menyebutkan tipe data) maka Rust akan menggunakan default type. Jika bilangan bulat maka ```i32```. Jika bilangan dengan pecahan decimal maka ```f64```.
+
+## Konversi Tipe Data Number
+Rust bisa melakukan konversi tipe data dari tipe data Number yang ukuranya kecil ke ukuranya lebih besar begitu juga sebaliknya. Untuk melakukan konversi number pada Rust bisa menggunakan kata kunci ```as``` Namun perlu diperhatikan jika kita lakukan konversi tipe data Number dari ukuran besar -> kecil, maka bisa terjadi yang namanya ```Integer Overflow```.
+
+```Integer Overflow``` adalah kondisi dimana nilai number tidak bisa ditampung oleh tipe data tujuan konversi. Misal kkita punya number ```1000000``` dalam bentu ```i32``` lalu dikonversi ke bentuk ```i8``` maka akan terjadi Integer Overflow. Karena ```i8``` tidak bisa menampung nilai tersebut. 
+
+## Numeric Operations
+Rust mendukung semua operasi numerik. Hampir sama dengan kebanyakan bahasa pemrograman lainya
+
+| Operator | Keterangan          |
+|----------|---------------------|
+| +        | tambah              |
+| -        | kurang              |
+| /        | bagi                |
+| *        | kali                |
+| %        | sisa bagi / modulo  |
+
+
+# Augmented Assignments
+Operasi ke variable yang sama
+
+| Numeric Operator | Augmented Assignments |
+|------------------|------------------------|
+| a = a + 10       | a += 10                |
+| a = a - 10       | a -= 10                |
+| a = a * 10       | a *= 10                |
+| a = a / 10       | a /= 10                |
+| a = a % 10       | a %= 10                |
+
+```!Important``` Perlu di ingat karena kita mengubah variable yang sama maka variable yang digunakan harus ```mutable```
+
+--- 
+
+# Boolean
+
+Tipe data yang sederhana, hanya bernilai true dan false. Walaupun sederhana, namun tipe data ini banyak di gunakan di mana-mana, terutama percabangan dan perulangan. 
+
+## Comparison Operators
+Operator perbandingan adalah operator yang menghasilkan nilai boolean true atau false
+
+| Comparison Operator | Keterangan               |
+|---------------------|--------------------------|
+| >                   | Lebih Dari               |
+| <                   | Kurang Dari              |
+| >=                  | Lebih Dari Sama Dengan   |
+| <=                  | Kurang Dari Sama Dengan  |
+| ==                  | Sama Dengan              |
+
+
+## Operasi Boolean
+
+| Operator | Keterangan |
+|----------|------------|
+| &&       | Dan        |
+| \|\|     | Atau       |
+| !        | Kebalikan  |
+
+### Operasi &&
+
+| Nilai 1 | Operator | Nilai 2 | Hasil |
+|---------|----------|---------|-------|
+| true    | &&       | true    | true  |
+| true    | &&       | false   | false |
+| false   | &&       | true    | false |
+| false   | &&       | false   | false |
+
+### Operasi ||
+
+| Nilai 1 | Operator | Nilai 2 | Hasil |
+|---------|----------|---------|-------|
+| true    | \|\|     | true    | true  |
+| true    | \|\|     | false   | true  |
+| false   | \|\|     | true    | true  |
+| false   | \|\|     | false   | false |
+
+### Operasi !
+
+| Operator | Nilai 2 | Hasil |
+|----------|---------|-------|
+| !        | true    | false |
+| !        | false   | true  |
+
+---
+ ## Char
+Representasi dari karakter dengan menggunakan petik satu '' pada Rust
