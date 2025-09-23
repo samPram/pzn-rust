@@ -75,7 +75,6 @@ fn number_convertion() {
     println!("e: {}", e);
 }
 
-
 #[test]
 fn numeric_operations() {
     let a = 10;
@@ -101,7 +100,6 @@ fn augmented_assignment() {
     a -= 10;
     println!("a: {}", a);
 }
-
 
 #[test]
 fn boolean() {
@@ -130,7 +128,7 @@ fn boolean_operator() {
     let nilai_akhir = 80;
 
     let lulus = absen >= 75;
-    let lulus_nilai_akhir = nilai_akhir >=75;
+    let lulus_nilai_akhir = nilai_akhir >= 75;
 
     let lulus_final = lulus && lulus_nilai_akhir;
     println!("{}", lulus_final); // Cok ora lulus cok wkwk
@@ -143,4 +141,81 @@ fn char_type() {
     let char2: char = 'b';
 
     println!("{} {}", char1, char2);
+}
+
+#[test]
+fn tuple() {
+    /* Harus di sebutkan tipe datanya di dalam (), dan di assign harus sama*/
+    let data: (i32, f64, bool) = (10, 10.5, true);
+
+    println!("{:?}", data);
+}
+
+#[test]
+fn tuple_access() {
+    let data: (i32, f64, bool) = (10, 10.5, true);
+
+    println!("{:?}", data);
+
+    let a = data.0;
+    let b = data.1;
+    let c = data.2;
+
+    println!("{} {} {}", a, b, c);
+}
+
+#[test]
+fn destructuring_tuple() {
+    let data: (i32, f64, bool) = (10, 10.5, true);
+
+    println!("{:?}", data);
+
+    // Destructuring
+    // let (a, b, c) = data;
+    // println!("{} {} {}", a, b, c);
+
+    let (a, b, _) = data; // C tidak digunakan
+    println!("{} {}", a, b);
+}
+
+#[test]
+fn mutable_tuple() {
+    // harus tambahkan mut jika ingin ubah data
+    let mut data: (i32, f64, bool) = (10, 10.5, true);
+
+    println!("{:?}", data);
+
+    // Destructuring
+    let (a, b, c) = data;
+    println!("{} {} {}", a, b, c);
+
+    data.0 = 20;
+    data.1 = 22.5;
+    data.2 = false;
+
+    println!("{:?}", data);
+}
+
+fn unit() {
+    println!("Hello");
+}
+
+#[test]
+fn test_unit() {
+    // tuple kosong atau unit
+    let result = unit();
+    println!("{:?}", result);
+
+    // Tuple kosong
+    let test = ();
+    println!("{:?}", test);
+}
+
+
+#[test]
+fn array() {
+    /* Array dengan [tipe_data, jumlah_data]*/
+    let array: [i32; 5] = [1, 2, 3, 4, 5];
+    // let array = [1, 2, 3, 4, 5]; // Bisa langsung 
+    println!("{:?}", array);
 }

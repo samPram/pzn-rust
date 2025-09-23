@@ -136,3 +136,23 @@ Operator perbandingan adalah operator yang menghasilkan nilai boolean true atau 
 ---
  ## Char
 Representasi dari karakter dengan menggunakan petik satu '' pada Rust
+
+---
+
+# Tuple
+Tipe data kumpulan lebih dari satu tipe data. Jumlah data di Tuple sudah final, artinya tidak bisa berkurang atau bertambah. Jika kita membuat Tuple dengan total ada 3 data, maka tidak akan bisa dibuah lagi jumlah data dan juga tipe datanya. Untk membuat Tuple kita bisa menggunakan ```()``` tanda kurung
+ ## Mengakses Tuple
+Untuk mengakses tiap data dalam Tuple, bisa menggunakan ```.``` titik lalu diikuti dengan nomer index datanya. Index pada Tuple dimulai dari 0.
+
+## Destructuring Tuple
+Kadang ketika ingin mengakses seluruh data Tuple dan menyimpanya variable, akan sangat menyulitkan jika akses satu-satu menggunakan nomor indexnya. Tuple mendukung destructuring yaitu membongkar isi Tuple dan menyimpanya dalam variable. JIka ada data Tuple yang tidak kita butuhkan bisa gunakan tanda ```_``` garis bawah ketika melakukan destructuring Tuple
+
+## Mutable Tuple
+Secara default variable Tuple adalah immutable sehingga otomatis Tuple yang sudah dibuat tidak bisa diubah lagi isi datanya. Namun jika ingin membuat variable dalam bentuk Mutable, data Tuple bisa diubah. Untuk mengubah data Tuple cukup gunakan nomor index dan =. Mirip seperti mengubah data variable biasa
+
+## Unit
+Unit adalah tuple tanpa nilai apapun ditulis dengan (). Hal ini mungkin kelihatan tidak ada gunanya. Biasanya unit ini digunakan untuk function-function yang tidak membutuhkan hasil data apapun.
+
+---
+# Array
+tipe data yang berisi kumpulan data, sama seperti Tuple. Yang membedakan Array dengan Tuple adalah pada Array hanya bisa menggunakan satu tipe data. Untuk membuat Array bisa gunakan ```[]``` tanda kurung kotak. Array di Rust tidak seperti pemrograman lain seperti JavaScript atau PHP yang bisa bertambah atau berkurung. Kalau di Rust fix sudah ditentukan.
