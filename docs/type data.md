@@ -156,3 +156,20 @@ Unit adalah tuple tanpa nilai apapun ditulis dengan (). Hal ini mungkin kelihata
 ---
 # Array
 tipe data yang berisi kumpulan data, sama seperti Tuple. Yang membedakan Array dengan Tuple adalah pada Array hanya bisa menggunakan satu tipe data. Untuk membuat Array bisa gunakan ```[]``` tanda kurung kotak. Array di Rust tidak seperti pemrograman lain seperti JavaScript atau PHP yang bisa bertambah atau berkurung. Kalau di Rust fix sudah ditentukan.
+
+## Mengakses Array
+Untuk mengakses Array sama seperti Tuple kita perlu tentukan nomor Index yang akan diakses dimulai dari 0. Namun cara mengaksesnya berbeda, tidak menggunakan titik, melainkan menggunakan ```[index]``` kurung kotak dengan index yang ingin di akses di dalamnya
+
+## Mutable Array
+Sama seperti Tuple, jika membuat variable Array yang immutable secara otomatis data Array tidak bisa diubah. Jika data Array ingin bisa diubah harus buat variable dalam bentuk mutable. Untuk mengubh data Array dengan menggunakan ```[index] = value``` diisi dengan nilai baru
+
+## Panjang Array
+Hal yang membedakan dengan Tuple, pada Array bisa mendapatkan jumlah data di Array dengan menggunakan function len() miliki Array.
+
+## Two Dimensional Array
+Saat membuat Array, kita bisa menggunakan tipe apapun di dalam Array, bahkan jika didalamnya adalah tipe Array lagi
+
+---
+
+# Constant
+variable immutable menggunakan kata kunci ```const```. Yang membedakan const dan let adalah const tidak memiliki mutable selain itu nilai const harus dideklarasikan ketika kokde program dibuat(bukan dijalankan), oleh karena itu nilai const tidak bisa hasil dari kalkulasi nilai lain yang belum jelas hasilnya. Untuk membuat const wajib disebukan tipe datanya secara eksplisit. Nama const di Rust harus huruf besar dan biasanya pemisah kata menggunakan ```_``` garis bawah

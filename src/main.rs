@@ -211,11 +211,83 @@ fn test_unit() {
     println!("{:?}", test);
 }
 
-
 #[test]
 fn array() {
-    /* Array dengan [tipe_data, jumlah_data]*/
+    /* Array dengan [tipe_data, jumlah_data] artinya fix tidak bisa bertambah atau berkurang panjang array yang dibuat*/
     let array: [i32; 5] = [1, 2, 3, 4, 5];
-    // let array = [1, 2, 3, 4, 5]; // Bisa langsung 
+    // let array = [1, 2, 3, 4, 5]; // Bisa langsung
     println!("{:?}", array);
+}
+
+#[test]
+fn access_array() {
+    let array: [i32; 5] = [1, 2, 3, 4, 5];
+
+    println!("{:?}", array);
+
+    let a = array[0];
+    let b = array[1];
+    println!("a: {}, b: {}", a, b);
+}
+
+#[test]
+fn mutable_array() {
+    let mut array: [i32; 5] = [1, 2, 3, 4, 5];
+
+    println!("{:?}", array);
+
+    let a = array[0];
+    let b = array[1];
+    println!("a: {}, b: {}", a, b);
+
+    array[0] = 10;
+    array[1] = 20;
+    println!("{:?}", array);
+}
+
+#[test]
+fn length_array() {
+    let mut array: [i32; 5] = [1, 2, 3, 4, 5];
+
+    println!("{:?}", array);
+
+    let a = array[0];
+    let b = array[1];
+    println!("a: {}, b: {}", a, b);
+
+    array[0] = 10;
+    array[1] = 20;
+    println!("{:?}", array);
+
+    /*
+    Kenapa type panjang array usize ? Karen type panjang array mengikuti type sistem operasi. Jadi maksimal panjang yang bisa di buat array ya tergantung type sistem operasinya 32 atau 64 bit
+    */
+    let length = array.len();
+    println!("{:?}", length);
+}
+
+#[test]
+fn two_dimensional() {
+    let matrix: [[i32; 2]; 2] = [[1, 2], [3, 4]];
+
+    println!("{:?}", matrix);
+    println!("{:?}", matrix[0]);
+    println!("{:?}", matrix[1]);
+    println!("0 0: {}", matrix[0][0]);
+    println!("0 1: {}", matrix[0][1]);
+    println!("1 0: {}", matrix[1][0]);
+    println!("1 1: {}", matrix[1][1]);
+}
+
+// Global variable constant scope
+const MAXIMUM: i32 = 100;
+#[test]
+fn constant() {
+    /*
+    * Harus disebutkan tipe datanya
+    * Harus ada nilainya dan tidak pernah berubah
+    * Harus huruf besar
+    */
+    const MINIMUM: i32 = 0;
+    println!("MINIMUM di dalam: {}, MAXIMUM di lura: {}", MINIMUM, MAXIMUM);
 }
