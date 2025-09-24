@@ -291,3 +291,23 @@ fn constant() {
     const MINIMUM: i32 = 0;
     println!("MINIMUM di dalam: {}, MAXIMUM di lura: {}", MINIMUM, MAXIMUM);
 }
+
+#[test]
+fn variable_scope() {
+    // Bisa akses
+    println!("{}", MAXIMUM);
+
+    let a = 1;
+
+    { // iner scope
+        // Bisa akses
+        println!("{}", a);
+
+        let b = 2;
+
+        // bisa akses
+        println!("{}", b);
+    }
+
+    // println!("{}", b); // tidak bisa akses outer scope atau tidak bisa akses scope diatasnya
+}

@@ -13,3 +13,8 @@ Rust adalah bahasa yang static typeing, artinya setiap kita membuat variable den
 
 ## Shadowing
 Di rust bisa membuat variable dengan nama yang sama. Namun saat kita membuat variable dengan nama yang sama maka variable sebelumnya akan tertutup atau disebut ```shadowing```. Praktik ini mungkin kurang baik jika dilakukan terlalu sering, karena bisa membingungkan yang membaca kode kita, namun ini di perbolehkan di Rust
+
+---
+
+## Variable Scope
+Seperti pada bahasa pemrograman lain pembuatan variable hanya bisa diakses di dalam scope ```{..}``` atau di dalam scope lain. Jika dari dalam scope ke luar itu tidak bisa
